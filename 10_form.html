@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>User Information Form</title>
+<style>
+  #favorite-places {
+    display: none;
+  }
+</style>
+</head>
+<body>
+  <h1>User Information Form</h1>
+  <form id="user-form">
+    <!-- Username Input -->
+    <label for="username">Username:</label>
+    <input type="text" id="username" name="username" value="" required><br>
+
+    <!-- User's Favorite Places in Nepal -->
+    <label for="favorite-places">Favorite Places in Nepal:</label>
+    <textarea id="favorite-places" name="favorite-places" rows="4" cols="50" required>
+        Pokhara: 
+         Imagine a place with a beautiful, big lake surrounded by tall, green mountains. 
+         In Pokhara, you can go on a boat ride in the lake and even see the reflection of the mountains in the water!
+         It's like a magical fairy tale world.
+
+        Mahendranagar: 
+         This is a place where you can see lots of trees and colorful flowers.
+         It's like a big garden! People there have their own special ways of living and they might even have some special stories to tell you.
+        
+        Dhangadi:
+         Dhangadi is a bit different from other places.
+         It's warm and you might feel like you're in a jungle because there are lots of animals and plants around. 
+         You can learn about nature and maybe even spot some unique animals!
+                
+       
+    </textarea><br>
+
+    <!-- Submit Button -->
+    <input type="submit" value="Submit">
+  </form>
+
+  <div id="display-favorite-places"></div>
+
+  <script>
+    const userForm = document.getElementById('user-form');
+    const favoritePlaces = document.getElementById('favorite-places');
+    const displayFavoritePlaces = document.getElementById('display-favorite-places');
+
+    userForm.addEventListener('submit', function(event) {
+      event.preventDefault(); // Prevent the form from actually submitting
+
+      // Show the favorite places after clicking submit
+      favoritePlaces.style.display = 'block';
+      displayFavoritePlaces.textContent = favoritePlaces.value;
+    });
+  </script>
+</body>
+</html>
